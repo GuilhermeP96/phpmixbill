@@ -82,6 +82,8 @@ CREATE TABLE `tbl_language` (
 
 INSERT INTO tbl_language (`id`,`name`,`folder`,`author`) VALUES ("1","Indonesia","indonesia","Ismail Marzuqi");
 INSERT INTO tbl_language (`id`,`name`,`folder`,`author`) VALUES ("2","English","english","Ismail Marzuqi");
+INSERT INTO tbl_language (`id`,`name`,`folder`,`author`) VALUES ("3","Português Brasileiro","portuguese-br","Guilherme Pinheiro");
+
 
 -- --------------------------------------------------------
 -- Structure for 'tbl_logs'
@@ -89,7 +91,7 @@ INSERT INTO tbl_language (`id`,`name`,`folder`,`author`) VALUES ("2","English","
 
 CREATE TABLE `tbl_logs` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date` datetime NOT NULL, /* Commented by GuilhermeP96 - DEFAULT '0000-00-00 00:00:00' the zeros cause MySQL bug on CREATE TABLE*/
   `type` varchar(50) NOT NULL,
   `description` text NOT NULL,
   `userid` int(10) NOT NULL,
